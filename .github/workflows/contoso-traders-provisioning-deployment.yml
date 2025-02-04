@@ -137,6 +137,7 @@ jobs:
         uses: Azure/arm-deploy@v1
         with:
           scope: subscription
+          deploymentName: "createResourceGroup-${{ env.SUFFIX }}"
           region: ${{ vars.DEPLOYMENTREGION }}
           template: ./iac/createResourceGroup.bicep
           parameters: rgName=${{ env.RESOURCE_GROUP_NAME }} suffix=${{ vars.SUFFIX }} rgLocation=${{ vars.DEPLOYMENTREGION }}
